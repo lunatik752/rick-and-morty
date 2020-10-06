@@ -16,7 +16,7 @@ const Header = (props) => {
                 <Icon icon={morty} name={'Morty'}/>
             </div>
             <div  className={style.loader}>
-                {props.initialized && <LinearProgress color='secondary'/>}
+                {props.status === 'loading' && <LinearProgress color='secondary'/>}
             </div>
         </div>
     );

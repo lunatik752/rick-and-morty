@@ -5,12 +5,12 @@ import {useSelector} from "react-redux";
 
 
 const App = () => {
-    const initialized = useSelector(state => state.app.initialized)
+    const status = useSelector(state => state.app.status)
 
     return (
 
         <div className={style.app}>
-            <Header initialized={initialized}/>
+            <Header status={status}/>
         </div>
     );
 }

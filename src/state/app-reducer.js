@@ -1,23 +1,23 @@
-const INITIALIZED_SUCCESS = 'rick-and-morty/app/INITIALIZED_SUCCESS';
+const SET_APP_STATUS = 'rick-and-morty/app/SET-APP-STATUS';
 
 
 const initialState = {
-    initialized: false,
+    status: 'idle',
 }
 
 export const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INITIALIZED_SUCCESS:
+        case SET_APP_STATUS:
             return {
                 ...state,
-                initialized: true
+                status: action.status
             }
         default:
             return state
     }
 }
 
-export const initializedSuccess = () => {
-    return {type: INITIALIZED_SUCCESS}
+export const setAppStatus = (status) => {
+    return {type: SET_APP_STATUS, status}
 }
 
