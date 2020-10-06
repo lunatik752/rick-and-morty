@@ -1,11 +1,14 @@
+@import '../../common/styles/sass/variables';
+
 .header {
-  position: fixed;
+  position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #88888a;
-  z-index: 3;
+  background-color: $bdColor;
+
 
   .container {
     display: flex;
@@ -24,11 +27,18 @@
         font-size: 20px;
         width: 110px;
       }
-
       h1 {
         margin: 0;
       }
     }
   }
+
+  .loader {
+
+    width: 100%;
+    background-color: $bdColor;
+  }
 }
+
+
 
