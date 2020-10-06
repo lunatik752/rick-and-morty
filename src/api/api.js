@@ -7,7 +7,10 @@ const instance = axios.create({
 
 
 export const charactersAPI = {
-    getCharactersList() {
-        return  instance.get(``)
+    getCharactersList(page) {
+        return  instance.get(`?page=${page}`)
+    },
+    getCharacter(id) {
+        return  instance.get(`${id}`)
     }
 }
