@@ -5,7 +5,7 @@ import morty from './../../assets/icons/morty_96215.svg'
 import {Icon} from "./Icon";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className={style.header}>
             <div className={style.container}>
@@ -16,7 +16,7 @@ const Header = () => {
                 <Icon icon={morty} name={'Morty'}/>
             </div>
             <div  className={style.loader}>
-                <LinearProgress color="secondary"/>
+                {props.initialized && <LinearProgress color='secondary'/>}
             </div>
         </div>
     );
