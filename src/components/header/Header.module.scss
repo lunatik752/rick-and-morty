@@ -23,10 +23,12 @@
       font-weight: 400;
       font-size: 25px;
       margin: 0 30px;
+      text-align: center;
       @media screen and (max-width: 500px) {
         font-size: 20px;
         width: 110px;
       }
+
       h1 {
         margin: 0;
       }
