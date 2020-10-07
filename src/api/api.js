@@ -2,15 +2,14 @@ import axios from "axios";
 
 const instance = axios.create({
     baseURL: 'https://rickandmortyapi.com/api/character/',
-    withCredentials: true,
 });
 
 
 export const charactersAPI = {
-    getCharactersList(page) {
-        return  instance.get(`?page=${page}`)
+    getCharactersList() {
+        return instance.get(``)
     },
-    getCharacter(id) {
+   /* getCharacter(id) {
         return  instance.get(`${id}`)
-    }
+    }*/
 }

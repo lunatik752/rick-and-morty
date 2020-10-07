@@ -1,7 +1,7 @@
 @import '../../common/styles/sass/variables';
 
 .header {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
