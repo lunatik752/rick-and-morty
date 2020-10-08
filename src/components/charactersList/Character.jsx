@@ -7,7 +7,7 @@ export const Character = ({character}) => {
 
 
     return (
-        <NavLink to={`/character/1`}>
+        <NavLink to={`/character/${character.id}`}>
             <div className={style.container}>
                 <img src={character.image}
                      alt={character.name}

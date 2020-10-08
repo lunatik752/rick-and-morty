@@ -1,5 +1,4 @@
-import {charactersAPI} from "../api/api";
-import {setCharactersList} from "./charactersList-reducer";
+
 
 export const SET_APP_STATUS = 'rick-and-morty/app/SET-APP-STATUS';
 export const INITIALIZE_APP = 'rick-and-morty/app/INITIALIZE-APP';
@@ -18,7 +17,6 @@ export const appReducer = (state = initialState, action) => {
                 status: action.status
             }
         case INITIALIZE_APP:
-            debugger
             return {
                 ...state,
                 isInitialized: true

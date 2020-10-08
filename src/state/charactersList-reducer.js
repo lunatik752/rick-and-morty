@@ -2,6 +2,7 @@ const SET_CHARACTERS = 'rick-and-morty/charactersList/SET_CHARACTERS';
 
 
 const initialState = {
+    info: {},
     characters: []
 }
 
@@ -9,13 +10,15 @@ const initialState = {
 export const charactersListReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CHARACTERS:
-        return {
-        ...state, characters: action.characters
-        }
+            return {
+                ...state,
+                info:  action.data.info,
+                characters: [...state.characters].concat(action.data.results)
+            }
         default:
             return state
     }
 }
 
 // actions
-export const setCharactersList = (characters) => ({type: SET_CHARACTERS, characters});
+export const setCharactersList = (data) => ({type: SET_CHARACTERS, data});

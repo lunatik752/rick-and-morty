@@ -14,6 +14,7 @@ const App = () => {
     useEffect(() => {
         dispatch(initializeApp())
     })
+
     const status = useSelector(state => state.app.status)
     const isInitialized = useSelector(state => state.app.isInitialized)
 

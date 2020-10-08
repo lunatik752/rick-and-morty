@@ -6,10 +6,11 @@ const instance = axios.create({
 
 
 export const charactersAPI = {
-    getCharactersList() {
-        return instance.get(``)
+    getCharactersList(pageNumber) {
+        return instance.get(`?page=${pageNumber}`)
     },
-   /* getCharacter(id) {
+    getCharacter(id) {
         return  instance.get(`${id}`)
-    }*/
+    }
 }
+
