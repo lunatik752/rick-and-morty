@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/effects'
-import {INITIALIZE_APP} from "./app-reducer";
+import {INITIALIZE_APP, setAppStatus} from "./app-reducer";
 import {charactersAPI} from "../api/api";
-import {setCharactersList} from "./charactersList-reducer";
+import {GET_CHARACTERS_LIST, setCharactersList} from "./charactersList-reducer";
 import {GET_CHARACTER, setCharacter} from "./charactePage-reducer";
 
 export function* watcherInitializeApp() {
@@ -18,6 +18,19 @@ export function* watcherGetCharacter() {
 }
 
 function* workerGetCharacter(action) {
+   yield put(setAppStatus('loading'))
    const res = yield call(charactersAPI.getCharacter, action.id)
    yield put(setCharacter(res.data))
+   yield put(setAppStatus('success'))
+}
+
+export function* watcherGetCharactersList() {
+   yield takeEvery(GET_CHARACTERS_LIST, workerGetCharactersList)
+}
+
+function* workerGetCharactersList(action) {
+   yield put(setAppStatus('loading'))
+   const res = yield call(charactersAPI.getCharactersList, action.nextPageNumber)
+   yield put(setCharactersList(res.data))
+   yield put(setAppStatus('success'))
 }

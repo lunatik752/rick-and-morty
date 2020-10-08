@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 
 export const CharacterPage = () => {
 
+    console.log('page')
+
     const {id} = useParams()
     const character = useSelector(state =>  state.characterPage.character)
 
@@ -14,7 +16,7 @@ export const CharacterPage = () => {
 
     useEffect(() => {
         dispatch(getCharacter(id))
-    })
+    }, [dispatch, id])
 
 
     return (
@@ -24,7 +26,6 @@ export const CharacterPage = () => {
                      className={style.characterPhoto}/>
                 <div className={style.characterName}>
                     <h3>{character.name}</h3>
-
                 </div>
             </div>
     );

@@ -1,3 +1,6 @@
-$bdColor: #88888a;
+$headerColor: #5a5a5a;
+$bgColor: #88888a;
 $bgSecondColor: #252527;
+
+$fontFamily: 'Roboto', sans-serif;
 

@@ -1,8 +1,13 @@
+@import '../../common/styles/sass/variables';
+
 .container {
   width: 100%;
   min-height: 88vh;
-  background-color: #252527;
+  background-color: $bgSecondColor;
   padding-top: 120px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 600px) {
+    padding-top: 135px;
+  }
 }

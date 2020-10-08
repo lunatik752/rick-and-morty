@@ -1,4 +1,5 @@
-const SET_CHARACTERS = 'rick-and-morty/charactersList/SET_CHARACTERS';
+const SET_CHARACTERS = 'rick-and-morty/charactersList/SET-CHARACTERS';
+export const GET_CHARACTERS_LIST = 'rick-and-morty/charactersList/SET-CHARACTERS-LIST';
 
 
 const initialState = {
@@ -22,3 +23,5 @@ export const charactersListReducer = (state = initialState, action) => {
 
 // actions
 export const setCharactersList = (data) => ({type: SET_CHARACTERS, data});
+export const getCharactersList = (nextPageNumber) => ({type: GET_CHARACTERS_LIST, nextPageNumber});
+

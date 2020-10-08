@@ -36,9 +36,3 @@ export const initializeApp = () => {
     return {type: INITIALIZE_APP}
 }
 
-
-// export const initializeAppTC = () => async (dispatch) => {
-//     const res = await charactersAPI.getCharactersList()
-//     dispatch(setCharactersList(res.data.results));
-//     dispatch(initializeApp())
-// }
