@@ -11,6 +11,9 @@ export const charactersAPI = {
     },
     getCharacter(id) {
         return  instance.get(`${id}`)
+    },
+    getFirstEpisodeName(episodeUrl) {
+        return axios.get(episodeUrl)
     }
 }
 
