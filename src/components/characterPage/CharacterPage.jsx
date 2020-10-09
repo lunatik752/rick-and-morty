@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import style from './CharacterPage.module.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {getCharacter} from "../../state/charactePage-reducer";
-import {useParams} from "react-router-dom";
+import {clearState, getCharacter} from "../../state/charactePage-reducer";
+import {NavLink, useParams} from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 export const CharacterPage = React.memo(() => {
 
@@ -15,6 +16,7 @@ export const CharacterPage = React.memo(() => {
         useEffect(() => {
             dispatch(getCharacter(id))
             return () => {
+                dispatch(clearState())
             }
         }, [dispatch, id])
 
@@ -37,23 +39,31 @@ export const CharacterPage = React.memo(() => {
                     <img src={character.image}
                          alt={character.name}/>
                 </div>
+
                 <div className={style.characterDescription}>
-                    <div className={style.characterName}>
-                        <h3>{character.name}</h3>
-                    </div>
-                    <div className={style.characterStatus}>
-                        <span><span className={statusClassName}>{characterStatus}</span> - {character.gender} </span>
-                    </div>
-                    <div className={style.description}>
-                        <span className={style.sectionTitle}> Last known location:</span>
-                        <span className={style.descriptionName}>
+                    <div className={style.descriptionBlock}>
+                        <div className={style.characterName}>
+                            <h3>{character.name}</h3>
+                        </div>
+                        <div className={style.characterStatus}>
+                            <span><span className={statusClassName}>{characterStatus}</span> - {character.gender} </span>
+                        </div>
+                        <div className={style.description}>
+                            <span className={style.sectionTitle}> Last known location:</span>
+                            <span className={style.descriptionName}>
                         {character.location?.name}
                     </span>
+                        </div>
+                        <div className={style.description}>
+                            <span className={style.sectionTitle}> First seen in:</span>
+                            <span className={style.descriptionName}>{firstEpisodeTitle}</span>
+                        </div>
                     </div>
-                    <div className={style.description}>
-                        <span className={style.sectionTitle}> First seen in:</span>
-                        <span className={style.descriptionName}>{firstEpisodeTitle}</span>
-                    </div>
+                    <NavLink to={`/charactersList/`}>
+                        <Button variant="contained">
+                            Back
+                        </Button>
+                    </NavLink>
                 </div>
             </div>
         );
