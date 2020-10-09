@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Main} from "./components/main/Main";
 import {initializeApp} from "./state/app-reducer";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {ErrorSnackbar} from "./components/errorAlert/ErrorAlert";
 
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(initializeApp())
-    }, [])
+    }, [dispatch])
 
     const status = useSelector(state => state.app.status)
     const isInitialized = useSelector(state => state.app.isInitialized)
@@ -28,6 +29,7 @@ const App = () => {
     return (
 
         <div className={style.app}>
+            <ErrorSnackbar/>
             <Header status={status}/>
             <Main/>
         </div>

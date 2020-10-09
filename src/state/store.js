@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {appReducer} from "./app-reducer";
 import createSagaMiddleware from 'redux-saga'
 import {watcherGetCharacter, watcherGetCharactersList, watcherInitializeApp} from "./sagas";
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
     characterPage: characterPageReducer
 })
 
-export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, thunk));
+export const store = createStore(rootReducer, compose(applyMiddleware(sagaMiddleware, thunk),  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 
 sagaMiddleware.run(watcherInitializeApp)
