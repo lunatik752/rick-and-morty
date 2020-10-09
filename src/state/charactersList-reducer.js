@@ -13,7 +13,7 @@ export const charactersListReducer = (state = initialState, action) => {
         case SET_CHARACTERS:
             return {
                 ...state,
-                info:  action.data.info,
+                info: action.data.info,
                 characters: [...state.characters].concat(action.data.results)
             }
         default:
@@ -23,5 +23,6 @@ export const charactersListReducer = (state = initialState, action) => {
 
 // actions
 export const setCharactersList = (data) => ({type: SET_CHARACTERS, data});
+
 export const getCharactersList = (nextPageNumber) => ({type: GET_CHARACTERS_LIST, nextPageNumber});
 

@@ -23,7 +23,9 @@ export const appReducer = (state = initialState, action) => {
                 isInitialized: true
             }
         case SET_ERROR: {
-            return {...state, error: action.error}
+            return {
+                ...state,
+                error: action.error}
         }
         default:
             return state
@@ -32,14 +34,9 @@ export const appReducer = (state = initialState, action) => {
 
 
 // actions
-export const setAppStatus = (status) => {
-    return {type: SET_APP_STATUS, status}
-}
+export const setAppStatus = (status) => ({type: SET_APP_STATUS, status})
 
-export const initializeApp = () => {
-    return {type: INITIALIZE_APP}
-}
+export const initializeApp = () => ( {type: INITIALIZE_APP})
 
-export const setAppError = (error) => {
-    return {type: SET_ERROR, error}
-}
+export const setAppError = (error) => ({type: SET_ERROR, error})
+

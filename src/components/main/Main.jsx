@@ -10,10 +10,9 @@ export const Main = () => {
         <div className={style.container}>
             <Switch>
                 <Route exact path={'/'} render={() => <Redirect to={'/charactersList/'}/>}/>
-                <Route exact path={'/charactersList/'} render={() => <CharactersList/>}/>
-                <Route
-                    path='/character/:id'
-                    render={() => <CharacterPage/>}/>
+                <Route path={'/charactersList/'} render={() => <CharactersList/>}/>
+                <Route path='/character/:id' render={() => <CharacterPage/>}/>
+                <Route path={'*'} render={ ()=> <h1>404</h1> } />
             </Switch>
         </div>
     );

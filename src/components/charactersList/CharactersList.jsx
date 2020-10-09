@@ -7,6 +7,7 @@ import {getCharactersList} from "../../state/charactersList-reducer";
 
 export const CharactersList = React.memo(() => {
 
+    let [hasMore, setHasMore] = useState(true)
 
     const dispatch = useDispatch()
     const charactersList = useSelector(state => state.charactersList.characters)
@@ -18,8 +19,6 @@ export const CharactersList = React.memo(() => {
         const index = nextPage.indexOf("?page=") + 6;
         nextPageNumber = Number(nextPage.slice(index))
     }
-
-    let [hasMore, setHasMore] = useState(true)
 
 
     const fetchMoreData = () => {
