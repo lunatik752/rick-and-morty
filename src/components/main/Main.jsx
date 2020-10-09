@@ -6,8 +6,6 @@ import {CharacterPage} from "../characterPage/CharacterPage";
 
 
 export const Main = () => {
-
-
     return (
         <div className={style.container}>
             <Switch>

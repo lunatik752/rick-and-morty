@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import style from './App.module.scss';
-import Header from "./components/header/Header";
+import {Header} from "./components/header/Header";
 import {useDispatch, useSelector} from "react-redux";
 import {Main} from "./components/main/Main";
 import {initializeApp} from "./state/app-reducer";

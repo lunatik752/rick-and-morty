@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Icon = (props) => {
+export const Icon = React.memo(({icon, name}) => {
     return (
         <div>
-            <img  src={props.icon} alt={props.name}/>
+            <img  src={icon} alt={name}/>
         </div>
     );
-}
+})

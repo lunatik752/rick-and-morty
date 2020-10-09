@@ -12,7 +12,7 @@ export const charactersAPI = {
     getCharacter(id) {
         return  instance.get(`${id}`)
     },
-    getFirstEpisodeName(episodeUrl) {
+    getFirstEpisodeTitle(episodeUrl) {
         return axios.get(episodeUrl)
     }
 }

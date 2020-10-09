@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {getCharactersList} from "../../state/charactersList-reducer";
 
-export const CharactersList = () => {
+export const CharactersList = React.memo(() => {
 
 
     const dispatch = useDispatch()
@@ -18,8 +18,6 @@ export const CharactersList = () => {
         const index = nextPage.indexOf("?page=") + 6;
         nextPageNumber = Number(nextPage.slice(index))
     }
-
-
 
     let [hasMore, setHasMore] = useState(true)
 
@@ -42,9 +40,9 @@ export const CharactersList = () => {
                 hasMore={hasMore}
                 loader={''}>
                 {
-                    charactersList.map(ch => <Character key={ch.id} character={ch}/>)
+                    charactersList.map(ch => <Character key={ch.id}  character={ch}/>)
                 }
             </InfiniteScroll>
         </div>
     );
-}
+})

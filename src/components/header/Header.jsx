@@ -5,7 +5,7 @@ import morty from './../../assets/icons/morty_96215.svg'
 import {Icon} from "./Icon";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-const Header = ({status}) => {
+export const Header = React.memo(({status}) => {
     return (
         <div className={style.header}>
             <div className={style.container}>
@@ -15,13 +15,12 @@ const Header = ({status}) => {
                 </div>
                 <Icon icon={morty} name={'Morty'}/>
             </div>
-            <div  className={style.loader}>
+            <div className={style.loader}>
                 {status === 'loading' && <LinearProgress color='secondary'/>}
             </div>
         </div>
     );
-}
+})
 
-export default Header;
 
 

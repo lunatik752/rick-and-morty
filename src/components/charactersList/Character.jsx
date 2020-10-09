@@ -3,22 +3,21 @@ import style from './Character.module.scss'
 import {NavLink} from "react-router-dom";
 
 
-export const Character = ({character}) => {
-
+export const Character = React.memo(({character}) => {
 
     return (
         <div className={style.wrapper}>
-        <NavLink to={`/character/${character.id}`}>
-            <div className={style.container}>
-                <div className={style.characterPhoto}>
-                    <img src={character.image} alt={character.name}/>
+            <NavLink to={`/character/${character.id}`}>
+                <div className={style.container}>
+                    <div className={style.characterPhoto}>
+                        <img src={character.image} alt={character.name}/>
+                    </div>
+                    <div className={style.characterName}>
+                        <h3>{character.name}</h3>
+                    </div>
                 </div>
-                <div className={style.characterName}>
-                    <h3>{character.name}</h3>
-                </div>
-            </div>
-        </NavLink>
+            </NavLink>
         </div>
     );
-}
+})
 
