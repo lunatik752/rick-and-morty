@@ -2,11 +2,12 @@
 
 .container {
   width: 100%;
-  min-height: 88vh;
+  min-height: 87vh;
   background-color: $bgSecondColor;
-  padding-top: 120px;
+  padding-top: 13vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   @media screen and (max-width: 600px) {
     padding-top: 135px;
   }

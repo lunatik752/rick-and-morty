@@ -4,3 +4,5 @@ $bgSecondColor: #252527;
 
 $fontFamily: 'Roboto', sans-serif;
 
+$fontSizeForDescription: 20px;
+
