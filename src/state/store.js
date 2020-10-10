@@ -3,7 +3,7 @@ import {appReducer} from "./app-reducer";
 import createSagaMiddleware from 'redux-saga'
 import {watcherGetCharacter, watcherGetCharactersList, watcherInitializeApp} from "./sagas";
 import {charactersListReducer} from "./charactersList-reducer";
-import {characterPageReducer} from "./charactePage-reducer";
+import {characterPageReducer} from "./characterPage-reducer";
 
 const sagaMiddleware = createSagaMiddleware()
 

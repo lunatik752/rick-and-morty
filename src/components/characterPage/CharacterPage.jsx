@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import style from './CharacterPage.module.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {clearState, getCharacter} from "../../state/charactePage-reducer";
-import {NavLink, useParams} from "react-router-dom";
+import {clearState, getCharacter} from "../../state/characterPage-reducer";
+import {useHistory, useParams} from "react-router-dom";
 import Button from "@material-ui/core/Button";
+
 
 export const CharacterPage = React.memo(() => {
 
@@ -13,12 +14,20 @@ export const CharacterPage = React.memo(() => {
 
         const dispatch = useDispatch()
 
+
         useEffect(() => {
             dispatch(getCharacter(id))
             return () => {
                 dispatch(clearState())
             }
         }, [dispatch, id])
+
+
+        let history = useHistory();
+
+        const goBack = () => {
+            history.goBack();
+        }
 
         const characterStatus = character.status;
         let statusClassName = '';
@@ -59,11 +68,9 @@ export const CharacterPage = React.memo(() => {
                             <span className={style.descriptionName}>{firstEpisodeTitle}</span>
                         </div>
                     </div>
-                    <NavLink to={`/charactersList/`}>
-                        <Button variant="contained">
-                            Back
-                        </Button>
-                    </NavLink>
+                    <Button onClick={goBack} variant="contained">
+                        Back
+                    </Button>
                 </div>
             </div>
         );

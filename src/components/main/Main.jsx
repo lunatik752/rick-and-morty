@@ -5,15 +5,14 @@ import {CharactersList} from "../charactersList/CharactersList";
 import {CharacterPage} from "../characterPage/CharacterPage";
 import {Page404} from "../Page404/Page404";
 
-
 export const Main = () => {
     return (
         <div className={style.container}>
             <Switch>
-                <Route exact path={'/'} render={() => <Redirect to={'/charactersList/'}/>}/>
-                <Route path={'/charactersList/'} render={() => <CharactersList/>}/>
+                <Route exact path={'/'}  render={() => <Redirect to={'/charactersList'}/>}/>
+                <Route path={'/charactersList'} render={() => <CharactersList/>}/>
                 <Route path='/character/:id' render={() => <CharacterPage/>}/>
-                <Route path={'*'} render={ () => <Page404/> } />
+                <Route path={'*'} render={() => <Page404/>}/>
             </Switch>
         </div>
     );

@@ -2,7 +2,7 @@ import {call, put, takeEvery} from 'redux-saga/effects'
 import {INITIALIZE_APP, setAppError, setAppStatus} from "./app-reducer";
 import {charactersAPI} from "../api/api";
 import {GET_CHARACTERS_LIST, setCharactersList} from "./charactersList-reducer";
-import {GET_CHARACTER, setCharacter, setFirstEpisodeTitle} from "./charactePage-reducer";
+import {GET_CHARACTER, setCharacter, setFirstEpisodeTitle} from "./characterPage-reducer";
 
 export function* watcherInitializeApp() {
     yield takeEvery(INITIALIZE_APP, workerInitializeApp)

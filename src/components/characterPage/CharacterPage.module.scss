@@ -20,11 +20,12 @@
   }
 
   .characterPhoto {
+    min-height: 250px ;
+    min-width: 250px ;
     margin: 10px 30px 10px 10px;
     @media screen and (max-width: 700px) {
       margin: 0;
     }
-
     img {
       @media screen and (max-width: 700px) {
         height: 230px;
@@ -84,19 +85,15 @@
     }
   }
 
-  a {
-    text-decoration: none;
-    color: black;
+  .backButton {
+    background-color: #fc9e04;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     font-size: $fontSizeForDescription;
-
-    .backButton {
-      background-color: #fc9e04;
-      height: 50px;
-      width: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-    }
   }
+
 }

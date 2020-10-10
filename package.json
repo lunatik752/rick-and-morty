@@ -1,6 +1,6 @@
 {
   "name": "rick-and-morty",
-  "homepage":"https://lunatik752.github.io/rick-and-morty/",
+  "homepage": "https://lunatik752.github.io/rick-and-morty/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
