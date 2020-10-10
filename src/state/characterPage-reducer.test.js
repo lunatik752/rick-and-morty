@@ -1,4 +1,4 @@
-import {characterPageReducer, clearState, setCharacter, setFirstEpisodeTitle} from "./charactePage-reducer";
+import {characterPageReducer, clearState, setCharacter, setFirstEpisodeTitle} from "./characterPage-reducer";
 
 
 let startState = {
@@ -41,7 +41,6 @@ test('character should be added', () => {
     expect(endState.character.episode.length).toBe(3);
 
 });
-
 
 test('firstEpisodeTitle should be added', () => {
 
