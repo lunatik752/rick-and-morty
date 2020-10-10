@@ -3,6 +3,7 @@ import style from './Main.module.scss'
 import {Redirect, Route, Switch} from "react-router-dom";
 import {CharactersList} from "../charactersList/CharactersList";
 import {CharacterPage} from "../characterPage/CharacterPage";
+import {Page404} from "../Page404/Page404";
 
 
 export const Main = () => {
@@ -12,7 +13,7 @@ export const Main = () => {
                 <Route exact path={'/'} render={() => <Redirect to={'/charactersList/'}/>}/>
                 <Route path={'/charactersList/'} render={() => <CharactersList/>}/>
                 <Route path='/character/:id' render={() => <CharacterPage/>}/>
-                <Route path={'*'} render={ ()=> <h1>404</h1> } />
+                <Route path={'*'} render={ () => <Page404/> } />
             </Switch>
         </div>
     );
