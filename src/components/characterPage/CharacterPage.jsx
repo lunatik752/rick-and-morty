@@ -48,7 +48,6 @@ export const CharacterPage = React.memo(() => {
                     <img src={character.image}
                          alt={character.name}/>
                 </div>
-
                 <div className={style.characterDescription}>
                     <div className={style.descriptionBlock}>
                         <div className={style.characterName}>

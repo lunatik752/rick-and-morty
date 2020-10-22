@@ -51,19 +51,3 @@ function* workerGetCharactersList(action) {
         yield put(setAppStatus('failed'))
     }
 }
-
-// export function* watcherGetFirstEpisodeTitle() {
-//     yield takeEvery(GET_FIRST_EPISODE_TITLE, workerGetFirstEpisodeTitle)
-// }
-//
-// function* workerGetFirstEpisodeTitle(action) {
-//     yield put(setAppStatus('loading'))
-//     try {
-//         const res = yield call(charactersAPI.getFirstEpisodeTitle, action.url)
-//         yield put(setFirstEpisodeTitle(res.data))
-//         yield put(setAppStatus('success'))
-//     } catch (error) {
-//         yield put(setAppError(error.message ? {error: error.message} : {error: 'Some error occurred'}))
-//         yield put(setAppStatus('failed'))
-//     }
-// }
