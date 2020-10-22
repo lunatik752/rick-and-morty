@@ -1,4 +1,5 @@
-import {characterPageReducer, clearState, setCharacter, setFirstEpisodeTitle} from "./characterPage-reducer";
+import {characterPageReducer} from "./characterPage-reducer";
+import {characterPageActions} from "./index";
 
 
 let startState = {
@@ -34,7 +35,7 @@ test('character should be added', () => {
         created: "2017-11-04T18:50:21.651Z"
     }
 
-    const action = setCharacter(newCharacter);
+    const action = characterPageActions.setCharacter(newCharacter);
     const endState = characterPageReducer(startState, action)
 
     expect(endState.character.id).toBe(2);
@@ -48,7 +49,7 @@ test('firstEpisodeTitle should be added', () => {
         name: 'Rixty Minutes'
     }
 
-    const action = setFirstEpisodeTitle(newEpisodeTitle);
+    const action = characterPageActions.setFirstEpisodeTitle(newEpisodeTitle);
     const endState = characterPageReducer(startState, action)
 
     expect(endState.firstEpisodeTitle).toBe(newEpisodeTitle.name);
@@ -85,7 +86,7 @@ test('state must be cleared', () => {
         firstEpisodeTitle: 'Rixty Minutes'
     }
 
-    const action = clearState(newStartState);
+    const action = characterPageActions.clearState(newStartState);
     const endState = characterPageReducer(newStartState, action)
 
     expect(endState.firstEpisodeTitle).toBe(startState.firstEpisodeTitle);
