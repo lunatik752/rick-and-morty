@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
 import style from './CharactersList.module.scss'
 import {Character} from "./Character";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {getCharactersList} from "./charactersList-reducer";
+import {charactersListActions, charactersListSelectors} from "./";
+import {useActions} from "../../state/store";
 
 export const CharactersList = React.memo(() => {
 
     let [hasMore, setHasMore] = useState(true)
 
-    const dispatch = useDispatch()
-    const charactersList = useSelector(state => state.charactersList.characters)
-    const nextPage = useSelector(state => state.charactersList.info.next)
-
+    const charactersList = useSelector(charactersListSelectors.selectCharactersList)
+    const nextPage = useSelector(charactersListSelectors.selectNextPage)
+const {getCharactersList} = useActions(charactersListActions)
 
     let nextPageNumber = 1
     if (nextPage) {
@@ -26,7 +26,7 @@ export const CharactersList = React.memo(() => {
             setHasMore(false);
             return;
         }
-        dispatch(getCharactersList(nextPageNumber))
+        getCharactersList(nextPageNumber)
     };
 
 
