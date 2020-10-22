@@ -34,13 +34,18 @@ export const characterPageReducer = (state = initialState, action) => {
 }
 
 // actions
-export const setCharacter = (character) => ({type: SET_CHARACTER, character})
+const setCharacter = (character) => ({type: SET_CHARACTER, character})
 
-export const getCharacter = (id) => ({type: GET_CHARACTER, id})
+const getCharacter = (id) => ({type: GET_CHARACTER, id})
 
-export const setFirstEpisodeTitle = (episode) => ({type: SET_FIRST_EPISODE_TITLE, episode})
+const setFirstEpisodeTitle = (episode) => ({type: SET_FIRST_EPISODE_TITLE, episode})
 
-export const clearState = () => ({type: CLEAR_STATE})
+const clearState = () => ({type: CLEAR_STATE})
 
 
-
+export const actions = {
+    setCharacter,
+    getCharacter,
+    setFirstEpisodeTitle,
+    clearState
+}
