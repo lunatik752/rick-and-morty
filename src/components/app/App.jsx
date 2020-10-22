@@ -18,7 +18,7 @@ const App = () => {
         initializeApp()
     }, [initializeApp])
 
-    const status = useSelector(state => state.app.status)
+    const status = useSelector()
     const isInitialized = useSelector(state => state.app.isInitialized)
 
 
