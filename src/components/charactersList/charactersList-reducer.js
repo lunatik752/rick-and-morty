@@ -22,7 +22,11 @@ export const charactersListReducer = (state = initialState, action) => {
 }
 
 // actions
-export const setCharactersList = (data) => ({type: SET_CHARACTERS, data});
+const setCharactersList = (data) => ({type: SET_CHARACTERS, data});
 
-export const getCharactersList = (nextPageNumber) => ({type: GET_CHARACTERS_LIST, nextPageNumber});
+const getCharactersList = (nextPageNumber) => ({type: GET_CHARACTERS_LIST, nextPageNumber});
 
+export const actions = {
+    setCharactersList,
+    getCharactersList
+}
