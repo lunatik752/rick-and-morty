@@ -1,29 +1,28 @@
 import React, {useEffect} from 'react';
 import style from './CharacterPage.module.scss'
-import {useDispatch, useSelector} from "react-redux";
-import {clearState, getCharacter} from "./characterPage-reducer";
+import {useSelector} from "react-redux";
 import {useHistory, useParams} from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import {useActions} from "../../state/store";
+import {characterPageActions, characterPageSelectors} from "./";
 
 
 export const CharacterPage = React.memo(() => {
 
         const {id} = useParams()
-        const character = useSelector(state => state.characterPage.character)
-        const firstEpisodeTitle = useSelector(state => state.characterPage.firstEpisodeTitle)
-
-        const dispatch = useDispatch()
+        const character = useSelector(characterPageSelectors.selectCharacter)
+        const firstEpisodeTitle = useSelector(characterPageSelectors.selectFirstEpisodeTitle())
+        const {getCharacter, clearState} = useActions(characterPageActions)
+        const history = useHistory();
 
 
         useEffect(() => {
-            dispatch(getCharacter(id))
+            getCharacter(id)
             return () => {
-                dispatch(clearState())
+                clearState()
             }
-        }, [dispatch, id])
+        }, [getCharacter, clearState, id])
 
-
-        let history = useHistory();
 
         const goBack = () => {
             history.goBack();
