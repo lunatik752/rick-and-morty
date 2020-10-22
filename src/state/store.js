@@ -1,9 +1,9 @@
 import {applyMiddleware, bindActionCreators, combineReducers, compose, createStore} from "redux";
-import {appReducer} from "./app-reducer";
+import {appReducer} from "../components/app/app-reducer";
 import createSagaMiddleware from 'redux-saga'
 import {watcherGetCharacter, watcherGetCharactersList, watcherInitializeApp} from "./sagas";
-import {charactersListReducer} from "./charactersList-reducer";
-import {characterPageReducer} from "./characterPage-reducer";
+import {charactersListReducer} from "../components/charactersList/charactersList-reducer";
+import {characterPageReducer} from "../components/characterPage/characterPage-reducer";
 import {useDispatch} from "react-redux";
 import {useMemo} from "react";
 

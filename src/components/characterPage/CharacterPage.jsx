@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import style from './CharacterPage.module.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {clearState, getCharacter} from "../../state/characterPage-reducer";
+import {clearState, getCharacter} from "./characterPage-reducer";
 import {useHistory, useParams} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 

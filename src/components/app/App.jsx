@@ -1,20 +1,22 @@
 import React, {useEffect} from 'react';
 import style from './App.module.scss';
-import {Header} from "./components/header/Header";
-import {useDispatch, useSelector} from "react-redux";
-import {Main} from "./components/main/Main";
-import {initializeApp} from "./state/app-reducer";
+import {Header} from "../header/Header";
+import {useSelector} from "react-redux";
+import {Main} from "../main/Main";
+import {appActions} from "./app-reducer";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {ErrorSnackbar} from "./components/errorAlert/ErrorAlert";
+import {ErrorSnackbar} from "../errorAlert/ErrorAlert";
+import {useActions} from "../../state/store";
 
 
 const App = () => {
 
-    const dispatch = useDispatch()
+      const {initializeApp} = useActions(appActions)
+
 
     useEffect(() => {
-        dispatch(initializeApp())
-    }, [dispatch])
+        initializeApp()
+    }, [initializeApp])
 
     const status = useSelector(state => state.app.status)
     const isInitialized = useSelector(state => state.app.isInitialized)

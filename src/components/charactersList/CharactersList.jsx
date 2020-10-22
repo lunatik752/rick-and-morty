@@ -3,7 +3,7 @@ import style from './CharactersList.module.scss'
 import {Character} from "./Character";
 import {useDispatch, useSelector} from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {getCharactersList} from "../../state/charactersList-reducer";
+import {getCharactersList} from "./charactersList-reducer";
 
 export const CharactersList = React.memo(() => {
 

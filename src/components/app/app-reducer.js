@@ -7,7 +7,6 @@ const initialState = {
     status: 'idle',
     isInitialized: false,
     error: null
-
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -32,11 +31,15 @@ export const appReducer = (state = initialState, action) => {
     }
 }
 
-
 // actions
-export const setAppStatus = (status) => ({type: SET_APP_STATUS, status})
+const setAppStatus = (status) => ({type: SET_APP_STATUS, status})
 
-export const initializeApp = () => ( {type: INITIALIZE_APP})
+const initializeApp = () => ( {type: INITIALIZE_APP})
 
-export const setAppError = (error) => ({type: SET_ERROR, error})
+const setAppError = (error) => ({type: SET_ERROR, error})
 
+export const appActions = {
+    setAppStatus,
+    initializeApp,
+    setAppError
+}
