@@ -9,7 +9,7 @@ export const Main = () => {
     return (
         <div className={style.container}>
             <Switch>
-                <Route exact path={'/'}  render={() => <Redirect to={'/charactersList'}/>}/>
+                <Route exact path={'/rick-and-morty'}  render={() => <Redirect to={'/charactersList'}/>}/>
                 <Route path={'/charactersList'} render={() => <CharactersList/>}/>
                 <Route path='/character/:id' render={() => <CharacterPage/>}/>
                 <Route path={'*'} render={() => <Page404/>}/>
