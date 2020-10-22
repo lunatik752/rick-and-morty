@@ -11,7 +11,7 @@ export const CharacterPage = React.memo(() => {
 
         const {id} = useParams()
         const character = useSelector(characterPageSelectors.selectCharacter)
-        const firstEpisodeTitle = useSelector(characterPageSelectors.selectFirstEpisodeTitle())
+        const firstEpisodeTitle = useSelector(characterPageSelectors.selectFirstEpisodeTitle)
         const {getCharacter, clearState} = useActions(characterPageActions)
         const history = useHistory();
 
