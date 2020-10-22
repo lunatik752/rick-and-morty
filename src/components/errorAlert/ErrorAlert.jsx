@@ -2,8 +2,8 @@ import React from 'react'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
 import {useSelector} from "react-redux";
-import {appActions} from "../app/app-reducer";
 import {useActions} from "../../state/store";
+import {appActions, appSelectors} from "../app";
 
 
 const Alert = (props) => {
@@ -12,7 +12,7 @@ const Alert = (props) => {
 
 export const ErrorSnackbar = () => {
 
-    const error = useSelector(state => state.app.error)
+    const error = useSelector(appSelectors.selectError)
     const {setAppError} = useActions(appActions)
 
     const handleClose = (event, reason) => {

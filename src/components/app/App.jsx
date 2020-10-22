@@ -3,11 +3,10 @@ import style from './App.module.scss';
 import {Header} from "../header/Header";
 import {useSelector} from "react-redux";
 import {Main} from "../main/Main";
-import {appActions} from "./app-reducer";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {ErrorSnackbar} from "../errorAlert/ErrorAlert";
 import {useActions} from "../../state/store";
-import {appSelectors} from "./index";
+import {appActions, appSelectors} from "./index";
 
 
 const App = React.memo(() => {

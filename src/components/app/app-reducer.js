@@ -38,7 +38,7 @@ const initializeApp = () => ( {type: INITIALIZE_APP})
 
 const setAppError = (error) => ({type: SET_ERROR, error})
 
-export const appActions = {
+export const actions = {
     setAppStatus,
     initializeApp,
     setAppError
