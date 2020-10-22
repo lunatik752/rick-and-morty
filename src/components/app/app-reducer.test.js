@@ -1,4 +1,5 @@
-import {appReducer, initializeApp, setAppError, setAppStatus} from "./app-reducer";
+import {appReducer} from "./app-reducer";
+import {appActions} from "./index";
 
 let startState = {
     status: 'idle',
@@ -10,7 +11,7 @@ let startState = {
 test('status should be changed', () => {
 
     const newStatus = 'loading'
-    const action = setAppStatus(newStatus);
+    const action = appActions.setAppStatus(newStatus);
     const endState = appReducer(startState, action)
 
     expect(endState.status).toBe('loading');
@@ -19,7 +20,7 @@ test('status should be changed', () => {
 
 test('isInitialized should be changed', () => {
 
-    const action = initializeApp();
+    const action = appActions.initializeApp();
     const endState = appReducer(startState, action)
 
     expect(endState.isInitialized).toBe(true);
@@ -29,7 +30,7 @@ test('error should be changed', () => {
 
 
     const error = 'some error';
-    const action = setAppError(error);
+    const action = appActions.setAppError(error);
     const endState = appReducer(startState, action)
 
     expect(endState.error).toBe(error);
